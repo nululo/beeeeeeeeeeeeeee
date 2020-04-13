@@ -13,6 +13,8 @@
         {{ end }}
         {{ end }}
         
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+        
     </head>
     <body>
         
@@ -25,5 +27,26 @@
         </div>
         <!-- Scripts -->
         <script src="{{ "assets/js/main.js" | relURL }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#efefef",
+      "text": "#404040"
+    },
+    "button": {
+      "background": "#8ec760",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "edgeless",
+  "content": {
+    "message": "Esta pagina utiliza cookies para saber más información sobre el usuario y proporcionar una mejor experiencia web. ",
+    "dismiss": "Acepto",
+    "link": "Saber más"
+  }
+});
+</script>
     </body> 
 </html>
