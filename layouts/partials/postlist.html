@@ -1,0 +1,17 @@
+<!-- Posts -->
+<section id="{{ .section.section_id }}" class="posts">
+    {{ $display_posts := (.Site.GetPage "section" "/posts").Pages }}
+    {{ range $post := $display_posts.ByDate.Reverse }}
+    <a href="{{ $post.URL }}" class="article-teaser">
+        {{ if $post.Params.thumb_img_path }}<img class="thumbnail" src="{{ $post.Params.thumb_img_path | relURL }}"
+                                       alt="{{ $post.Title }}"/>{{ end }}
+        <div class="copy">
+            <h2>{{ $post.Title }}</h2>
+            <h3 class="publish-date">Published on {{ $post.Date | dateFormat "January 02, 2006" }}</h3>
+
+            <p class="summary">{{ $post.Params.excerpt }}</p>
+            <div class="text-link">Read more</div>
+        </div>
+    </a>
+    {{ end }}
+</section>

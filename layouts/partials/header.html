@@ -1,0 +1,11 @@
+<!-- Header -->
+<header id='header' class='header container'>
+    <a href='{{ "/" | relURL }}' class='logo'>{{ .Site.Data.header.content }}</a>
+    {{ if and .Site.Menus.main .Site.Data.header.has_nav }}
+    <nav>
+        {{ range $item := .Site.Menus.main }}
+        <a class="nav-link{{ if eq $.URL $item.URL }} active{{ end }}" href="{{ if strings.HasPrefix $item.URL "#" }}{{ $item.URL }}{{ else }}{{ $item.URL | relURL }}{{ end }}">{{ $item.Name }}</a>
+        {{ end }}
+    </nav>
+    {{ end }}
+</header>

@@ -1,0 +1,10 @@
+<!-- Section -->
+<section id="{{ .section.section_id }}" class="hero">
+    {{ if or .section.image .Site.Data.author.avatar }}<img src="{{ if .section.image }}{{ .section.image | relURL }}{{ else }}{{ .Site.Data.author.avatar | relURL }}{{ end }}"/>{{ end }}
+    {{ if .section.title }}
+    <div class="copy">
+        <h1>{{ .section.title }}</h1>
+        {{ partial "markdownify-block" .section.subtitle }}
+    </div>
+    {{ end }}
+</section>

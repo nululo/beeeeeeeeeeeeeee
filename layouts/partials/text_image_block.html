@@ -1,0 +1,7 @@
+<!-- Section -->
+<section id="{{ .section.section_id }}" class="content">
+    {{ if .section.image }}<img class="inline-image" src="{{ .section.image | relURL }}"/>{{ end }}
+    <div class="text-with-image">
+        {{ partial "markdownify-block" .section.text }}
+    </div>
+</section>
